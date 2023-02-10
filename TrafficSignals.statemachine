@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statemachine:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:statemachine="http://nl.vu.cs.bumble/statemachine" name="Traffic Signals">
+  <input name="Go">
+    <baseconcept xsi:type="statemachine:Input"/>
+    <baseconcept xsi:type="statemachine:Input"/>
+  </input>
+  <input name="Wait"/>
+  <input name="Stop"/>
+  <transition description="fromRedtoYellow" input="//@input.1" from="//@states.0" to="//@states.1"/>
+  <transition description="fromYellowtoGreen" input="//@input.0" from="//@states.1" to="//@states.2"/>
+  <transition description="fromYellowtoRed" input="//@input.2" from="//@states.1" to="//@states.0"/>
+  <transition description="fromGreentoYellow" input="//@input.1" from="//@states.2" to="//@states.1"/>
+  <states name="Red"/>
+  <states name="Yellow"/>
+  <states name="Green"/>
+</statemachine:StateMachine>
